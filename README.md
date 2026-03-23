@@ -25,6 +25,7 @@
 ---
 ### 2. Colocar o nome nesse arquivo `README.md`
 
+Igor Batista Marques da Silva
 ---
 ### 3. Clonar o repositório remoto na máquina local ou criar um _codespace_
 
