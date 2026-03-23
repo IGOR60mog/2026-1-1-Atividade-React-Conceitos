@@ -1,26 +1,66 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --neon-green: #39ff14;
+  --hot-pink: #ff007f;
+  --electric-purple: #8b00ff;
+  --bright-yellow: #fefe33;
+  --deep-black: #050505;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--deep-black);
+  color: white;
+  /* Fundo com gradiente animado */
+  background: linear-gradient(-45deg, #050505, #1a0033, #001a1a, #050505);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  font-family: 'Black Ops One', 'Impact', sans-serif;
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Efeito de Neon para Texto */
+.neon-text {
+  color: #fff;
+  text-shadow: 
+    0 0 7px var(--hot-pink),
+    0 0 10px var(--hot-pink),
+    0 0 21px var(--hot-pink),
+    0 0 42px var(--hot-pink);
+  text-transform: uppercase;
+  letter-spacing: 5px;
+}
+
+/* Input Espalhafatoso */
+.input-vibrante {
+  background: var(--deep-black);
+  border: 4px solid var(--neon-green);
+  color: var(--neon-green);
+  font-weight: bold;
+  box-shadow: 5px 5px 0px var(--electric-purple);
+  transition: all 0.2s;
+}
+
+.input-vibrante:focus {
+  transform: translate(-2px, -2px);
+  box-shadow: 8px 8px 0px var(--hot-pink);
+  outline: none;
+}
+
+/* Card Estilo "Pop Art" */
+.card-flashy {
+  background: white;
+  border: 5px solid var(--electric-purple);
+  box-shadow: 10px 10px 0px var(--bright-yellow);
+  transition: transform 0.1s;
+}
+
+.card-flashy:hover {
+  transform: rotate(-2deg) scale(1.05);
+  box-shadow: 15px 15px 0px var(--hot-pink);
 }
